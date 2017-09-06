@@ -6,7 +6,7 @@ export type CustomFieldProps = {
   label?: string,
   labelHidden?: boolean,
   errorPosition?: string,
-  errorStyle?: Array<string>,
+  errorStyles?: Array<string>,
   errorColor?: string,
   className?: string,
   width?: string,
