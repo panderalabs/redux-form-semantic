@@ -25,4 +25,6 @@ const Text = ({
   />
 );
 
+Text.fieldType = 'text';
+
 export default Text;

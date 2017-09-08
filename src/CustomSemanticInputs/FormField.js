@@ -20,7 +20,6 @@ const FormField = ({
   placeholder,
   width,
   inline,
-  fieldType,
   componentToRender,
   className,
   ...rest
@@ -56,7 +55,7 @@ const FormField = ({
          also appears next the input itself.
         */
       }
-      {(!labelHidden && !['checkbox', 'radio'].includes(fieldType)) && (
+      {(!labelHidden && !['checkbox', 'radio'].includes(componentToRender.fieldType)) && (
         <label htmlFor={input.id}>{label}</label>
       )}
 
@@ -82,7 +81,7 @@ const FormField = ({
       {React.createElement(componentToRender, {
         input,
         placeholder,
-        ...(['checkbox', 'radio'].includes(fieldType) && { label }),
+        ...(['checkbox', 'radio'].includes(componentToRender.fieldType) && { label }),
         ...rest,
       })}
 
@@ -94,7 +93,7 @@ const FormField = ({
         */
       }
       {
-        (error && ['checkbox', 'radio'].includes(fieldType)) &&
+        (error && ['checkbox', 'radio'].includes(componentToRender.fieldType)) &&
         (!inline && ['bottom', undefined].includes(errorPosition)) &&
         (<br />)
       }

@@ -29,4 +29,6 @@ const Radio = ({
   />
 );
 
+Radio.fieldType = 'radio';
+
 export default Radio;

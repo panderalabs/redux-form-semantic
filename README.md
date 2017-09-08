@@ -6,7 +6,7 @@ Multiple helper components binding redux-form and semantic-ui-react together for
 ## Implemented Components
 Fields are a combination of label, input, error.
 
-1. TextField
+1. [TextField](https://react.semantic-ui.com/elements/input)
 2. [TextAreaField](https://react.semantic-ui.com/addons/text-area#text-area-example-text-area)
 3. [SelectField](https://react.semantic-ui.com/addons/select)
 4. [MultiSelectField](https://react.semantic-ui.com/modules/dropdown#dropdown-example-multiple-search-selection)

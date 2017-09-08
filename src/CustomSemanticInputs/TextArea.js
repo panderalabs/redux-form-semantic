@@ -25,4 +25,6 @@ const TextArea = ({
   />
 );
 
+TextArea.fieldType = 'textarea';
+
 export default TextArea;

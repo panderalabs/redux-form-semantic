@@ -34,4 +34,6 @@ const Select = ({
   />
 );
 
+Select.fieldType = 'select';
+
 export default Select;

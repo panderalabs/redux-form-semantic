@@ -26,4 +26,6 @@ const Checkbox = ({
   />
 );
 
+Checkbox.fieldType = 'checkbox';
+
 export default Checkbox;
