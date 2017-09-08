@@ -27,6 +27,7 @@ errorPositon: left | right | bottom | top
 errorStyles: ['basic', 'pointer']
 errorColor: any semantic color
 ```
+[errorColor](https://react.semantic-ui.com/elements/label#label-example-colored)
 
 ## Example TextField
 ```
