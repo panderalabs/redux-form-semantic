@@ -1,6 +1,6 @@
 {
   "name": "redux-form-semantic",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Multiple components integrating redux-form and semantic-ui-react together for standardized error handling.",
   "main": "dist/index",
   "license": "ISC",
@@ -20,12 +20,11 @@
     "build": "babel src --out-dir dist",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "react": "^15.6.1",
     "redux-form": "^7.0.3",
-    "semantic-ui-react": "^0.72.0"
-  },
-  "devDependencies": {
+    "semantic-ui-react": "^0.72.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
