@@ -42,8 +42,8 @@
     "flow-bin": "^0.53.0"
   },
   "peerDependencies": {
-    "react": ">=0.14.0 <= 15.6.1",
-    "redux-form": ">=7.0.3 <= 8",
+    "react": ">=0.14.0 <= 16",
+    "redux-form": ">=7.0.3 < 8",
     "semantic-ui-react": ">=0.72.0 <= 0.72"
   },
   "babel": {
