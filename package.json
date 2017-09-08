@@ -2,7 +2,7 @@
   "name": "redux-form-semantic",
   "version": "0.1.0",
   "description": "Multiple components integrating redux-form and semantic-ui-react together for standardized error handling.",
-  "main": "dist/index",
+  "main": "dist/index.js",
   "license": "ISC",
   "repository": {
     "type": "git",
