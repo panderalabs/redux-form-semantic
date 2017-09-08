@@ -2,6 +2,7 @@
 import React from 'react';
 import { Checkbox as SemanticCheckbox } from 'semantic-ui-react';
 import type { FieldProps } from 'redux-form';
+import { INPUT_TYPES } from '../constants';
 
 type Props = {
   label: string,
@@ -26,6 +27,6 @@ const Checkbox = ({
   />
 );
 
-Checkbox.fieldType = 'checkbox';
+Checkbox.fieldType = INPUT_TYPES.CHECKBOX;
 
 export default Checkbox;

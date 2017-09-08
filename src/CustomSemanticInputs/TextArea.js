@@ -2,6 +2,7 @@
 import React from 'react';
 import { TextArea as SemanticTextArea } from 'semantic-ui-react';
 import type { FieldProps } from 'redux-form';
+import { INPUT_TYPES } from '../constants';
 
 type Props = {
   placeholder?: string
@@ -25,6 +26,6 @@ const TextArea = ({
   />
 );
 
-TextArea.fieldType = 'textarea';
+TextArea.fieldType = INPUT_TYPES.TEXTAREA;
 
 export default TextArea;

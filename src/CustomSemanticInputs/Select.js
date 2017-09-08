@@ -2,6 +2,7 @@
 import React from 'react';
 import { Select as SemanticSelect } from 'semantic-ui-react';
 import type { FieldProps } from 'redux-form';
+import { INPUT_TYPES } from '../constants';
 
 type Props = {
   placeholder?: string,
@@ -34,6 +35,6 @@ const Select = ({
   />
 );
 
-Select.fieldType = 'select';
+Select.fieldType = INPUT_TYPES.SELECT;
 
 export default Select;

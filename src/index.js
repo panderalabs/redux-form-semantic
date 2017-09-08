@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import { CustomFieldProps } from './Types';
+import { CustomFieldProps } from './types';
 import ReduxFormFieldWrapper from './ReduxFormFieldWrapper';
-import { Text, TextArea, Select, Checkbox, Radio } from './CustomSemanticInputs';
+import { Text, TextArea, Select, Checkbox, Radio } from './customSemanticInputs';
 
 export const TextField = (props: CustomFieldProps) => (
   <ReduxFormFieldWrapper

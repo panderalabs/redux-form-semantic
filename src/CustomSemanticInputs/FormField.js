@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { Form, Label } from 'semantic-ui-react';
+import { INPUT_TYPES, ERROR_STYLES, ORIENTATION } from '../constants';
 import type { CustomFieldProps } from '../Types';
 
 type Props = {
@@ -25,17 +26,17 @@ const FormField = ({
   ...rest
 }: Props) => {
   const getErrorPointerPosition = () => ({
-    left: 'right',
-    right: 'left',
-    top: 'below',
-    bottom: 'above',
-    undefined: (() => (inline ? 'left' : 'above'))(),
+    [ORIENTATION.LEFT]: ORIENTATION.RIGHT,
+    [ORIENTATION.RIGHT]: ORIENTATION.LEFT,
+    [ORIENTATION.TOP]: ORIENTATION.BELOW,
+    [ORIENTATION.BOTTOM]: ORIENTATION.ABOVE,
+    undefined: (() => (inline ? ORIENTATION.LEFT : ORIENTATION.ABOVE))(),
   }[errorPosition]);
 
   const Error = () => (
     <Label
-      basic={errorStyles.includes('basic')}
-      pointing={errorStyles.includes('pointing') && getErrorPointerPosition()}
+      basic={errorStyles.includes(ERROR_STYLES.BASIC)}
+      pointing={errorStyles.includes(ERROR_STYLES.POINTING) && getErrorPointerPosition()}
       color={errorColor}
     >
       {error}
@@ -45,7 +46,14 @@ const FormField = ({
   return (
     <Form.Field
       width={width || null}
-      inline={inline || (!!errorPosition && ['left', 'right'].includes(errorPosition))}
+      inline={
+        inline || (
+          !!errorPosition && [
+            ORIENTATION.LEFT,
+            ORIENTATION.right,
+          ].includes(errorPosition)
+        )
+      }
       className={className}
     >
 
@@ -55,9 +63,14 @@ const FormField = ({
          also appears next the input itself.
         */
       }
-      {(!labelHidden && !['checkbox', 'radio'].includes(componentToRender.fieldType)) && (
-        <label htmlFor={input.id}>{label}</label>
-      )}
+      {
+        (
+          !labelHidden &&
+          ![INPUT_TYPES.CHECKBOX, INPUT_TYPES.RADIO].includes(componentToRender.fieldType)
+        ) && (
+          <label htmlFor={input.id}>{label}</label>
+        )
+      }
 
       {
         /*
@@ -66,7 +79,7 @@ const FormField = ({
       }
       {
         touched &&
-        (error && ['left', 'top'].includes(errorPosition) && (
+        (error && [ORIENTATION.LEFT, ORIENTATION.TOP].includes(errorPosition) && (
           <Error />
         ))
       }
@@ -81,7 +94,12 @@ const FormField = ({
       {React.createElement(componentToRender, {
         input,
         placeholder,
-        ...(['checkbox', 'radio'].includes(componentToRender.fieldType) && { label }),
+        ...(
+          [
+            INPUT_TYPES.CHECKBOX,
+            INPUT_TYPES.RADIO,
+          ].includes(componentToRender.fieldType) && { label }
+        ),
         ...rest,
       })}
 
@@ -93,8 +111,11 @@ const FormField = ({
         */
       }
       {
-        (error && ['checkbox', 'radio'].includes(componentToRender.fieldType)) &&
-        (!inline && ['bottom', undefined].includes(errorPosition)) &&
+        (
+          error &&
+          [INPUT_TYPES.CHECKBOX, INPUT_TYPES.RADIO].includes(componentToRender.fieldType)
+        ) &&
+        (!inline && [ORIENTATION.BOTTOM, undefined].includes(errorPosition)) &&
         (<br />)
       }
 
@@ -106,7 +127,7 @@ const FormField = ({
       }
       {
         touched &&
-        (error && ['right', 'bottom', undefined].includes(errorPosition) && (
+        (error && [ORIENTATION.RIGHT, ORIENTATION.BOTTOM, undefined].includes(errorPosition) && (
           <Error />
         ))
       }
@@ -116,8 +137,8 @@ const FormField = ({
 
 FormField.defaultProps = {
   labelHidden: false,
-  errorPosition: 'bottom',
-  errorStyles: ['basic', 'pointing'],
+  errorPosition: ORIENTATION.BOTTOM,
+  errorStyles: [ERROR_STYLES.BASIC, ERROR_STYLES.POINTING],
   errorColor: 'red',
 };
 

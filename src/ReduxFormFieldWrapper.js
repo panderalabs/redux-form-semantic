@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import { Field } from 'redux-form';
-import FormField from './CustomSemanticInputs/FormField';
-import type { CustomFieldProps } from './Types';
+import FormField from './customSemanticInputs/FormField';
+import type { CustomFieldProps } from './types';
 
 const ReduxFormFieldWrapper = (props: CustomFieldProps) => (
   <Field

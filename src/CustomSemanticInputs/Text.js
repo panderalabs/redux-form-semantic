@@ -2,6 +2,7 @@
 import React from 'react';
 import { Input } from 'semantic-ui-react';
 import type { FieldProps } from 'redux-form';
+import { INPUT_TYPES } from '../constants';
 
 type Props = {
   placeholder?: string
@@ -25,6 +26,6 @@ const Text = ({
   />
 );
 
-Text.fieldType = 'text';
+Text.fieldType = INPUT_TYPES.TEXT;
 
 export default Text;
