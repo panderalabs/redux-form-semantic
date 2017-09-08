@@ -1,7 +1,10 @@
 # redux-form-semantic
 Multiple helper components binding redux-form and semantic-ui-react together for standardized error handling.
-
 ## Integration of [Semantic UI React](https://react.semantic-ui.com/introduction) with [Redux Form](http://redux-form.com)
+
+## Using
+Package is published to our private nexus. In order to use you will need to setup the registry.
+[Setting Up Private Registry](https://panderaappdev.atlassian.net/wiki/spaces/PROD/pages/33521809/Pandera+Nexus+Maven+NPM+Docker+Repository+Configuration#PanderaNexus(Maven/NPM/Docker)RepositoryConfiguration-NPM/Yarn)
 
 ## Implemented Components
 Fields are a combination of label, input, error.
