@@ -1,6 +1,6 @@
 {
   "name": "redux-form-semantic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Multiple components integrating redux-form and semantic-ui-react together for standardized error handling.",
   "main": "dist/index.js",
   "license": "ISC",
@@ -43,7 +43,7 @@
   "peerDependencies": {
     "react": ">=0.14.0 <= 16",
     "redux-form": ">=7.0.3 < 8",
-    "semantic-ui-react": ">=0.72.0 <= 0.72"
+    "semantic-ui-react": ">=0.72.0 <= 0.73"
   },
   "babel": {
     "presets": [
