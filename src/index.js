@@ -32,6 +32,15 @@ export const MultiSelectField = (props: CustomFieldProps) => (
     selection
     multiple
     component={Select}
+    onBlur={(e, data) => {
+      // In the multi select field, we need to trigger on an onChange event to persist
+      // the values that have been selected, since the onChange is not triggered while
+      // the select box is open
+      props.input.onChange(data.value);
+      if (props.onBlur) {
+        props.onBlur(e, data);
+      }
+    }}
   />
 );
 

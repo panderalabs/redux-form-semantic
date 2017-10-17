@@ -20,12 +20,6 @@ const Select = ({
     {...rest}
     placeholder={placeholder}
     options={options}
-    onBlur={(e, data) => {
-      input.onChange(data.value);
-      if (rest.onBlur) {
-        rest.onBlur(e, data);
-      }
-    }}
     onChange={(e, data) => {
       input.onChange(data.value);
       if (rest.onChange) {
