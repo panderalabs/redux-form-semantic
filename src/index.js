@@ -34,6 +34,9 @@ export const MultiSelectField = (props: CustomFieldProps) => (
     component={Select}
     onBlur={(e, data) => {
       props.input.onChange(data.value);
+      if (props.onBlur) {
+        props.onBlur(e, data);
+      }
     }}
   />
 );
