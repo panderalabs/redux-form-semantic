@@ -1,5 +1,5 @@
 {
-  "name": "redux-form-semantic",
+  "name": "@panderasystems/redux-form-semantic",
   "version": "0.1.1",
   "description": "Multiple components integrating redux-form and semantic-ui-react together for standardized error handling.",
   "main": "dist/index.js",
