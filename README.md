@@ -18,7 +18,7 @@ Fields are a combination of label, input, error.
 6. [SliderField](https://react.semantic-ui.com/addons/radio#radio-example-slider)
 7. [RadioField](https://react.semantic-ui.com/addons/radio#radio-example-radio)
 
-#[Demo](https://jsfiddle.net/75rh036o/150/)
+#[Demo](https://jsfiddle.net/75rh036o/190/)
 
 ## Error Props
 To manage how your errors look we have access to a few props
