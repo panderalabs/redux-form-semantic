@@ -1,10 +1,142 @@
-# redux-form-semantic
-Multiple helper components binding redux-form and semantic-ui-react together for standardized error handling.
-## Integration of [Semantic UI React](https://react.semantic-ui.com/introduction) with [Redux Form](http://redux-form.com)
+# Redux Form + React SemanticUI Bindings
+==============
 
-## Using
-Package is published to our private nexus. In order to use you will need to setup the registry.
-[Setting Up Private Registry](https://panderaappdev.atlassian.net/wiki/spaces/PROD/pages/33521809/Pandera+Nexus+Maven+NPM+Docker+Repository+Configuration#PanderaNexus(Maven/NPM/Docker)RepositoryConfiguration-NPM/Yarn)
+Multiple helper components binding redux-form and semantic-ui-react together for standardized error handling.
+
+```sh
+npm install --save redux-form
+npm install --save semantic-ui-react
+npm install --save @panderalabs/redux-form-semantic
+```
+## Why do I need this?
+[Redux Form](http://redux-form.com) is an excellent library for managing complex form state in the UI. [Semantic UI React](https://react.semantic-ui.com/introduction) is a great library of UI Components (including form components). To make Redux Form work with the components, a certain amount of boilerplate is required to hook up your components to Redux-Form. In some cases, that boilerplate includes having to call events on the Semantic UI component when a change occurs in Redux-Form. This library helps remove that boilerplate and makes it easier to connect your error messaging with your form elements.
+
+## How do I use it?
+
+### Installation
+Install via npm:
+```sh
+npm install --save redux-form
+npm install --save semantic-ui-react
+npm install --save @panderalabs/redux-form-semantic
+```
+### Hook up redux-form middleware
+Hook up your form to redux-form:
+```js
+import { createStore, combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
+
+const rootReducer = combineReducers({
+  // ...your other reducers here
+  // you have to pass formReducer under 'form' key,
+  // for custom keys look up the docs for 'getFormState'
+  form: formReducer
+})
+
+const store = createStore(rootReducer)
+```
+
+### Wrap a Semantic-UI form with Redux-Form
+Create a new Semantic UI form & wrap it in redux-form:
+```js
+import React from 'react'
+import { Field, reduxForm } from 'redux-form'
+import { Form } from 'semantic-ui-react';
+
+const ContactForm = props => {
+  const { handleSubmit } = props
+  return (
+    <Form onSubmit={ handleSubmit }>
+      { /* form body*/ }
+    </Form>
+  )
+}
+
+ContactForm = reduxForm({
+  // a unique name for the form
+  form: 'contact'
+})(ContactForm)
+
+export default ContactForm;
+```
+
+### Add Form Components
+```js
+import React from 'react'
+import { Field, reduxForm } from 'redux-form'
+import { Form, Button } from 'semantic-ui-react';
+import { TextField } from '@panderalabs/redux-form-semantic'
+
+const ContactForm = props => {
+  const { handleSubmit } = props
+  return (
+    <Form onSubmit={ handleSubmit }>
+      <Form.Field>
+        <TextField
+          name="firstName"
+          label="First Name"
+          placeholder="Enter First Name"
+        />
+      </Form.Field>
+      <Form.Field>
+        <TextField
+          name="lastName"
+          label="Last Name"
+          placeholder="Enter Last Name"
+        />
+      </Form.Field>
+      <Button>Save</Button>
+    </Form>
+  )
+}
+
+export default reduxForm({
+  // a unique name for the form
+  form: 'contact'
+})(ContactForm)
+```
+
+### Validate some fields
+```js
+import React from 'react'
+import { Field, reduxForm } from 'redux-form'
+import { Form, Button } from 'semantic-ui-react';
+import { TextField } from '@panderalabs/redux-form-semantic'
+
+const ContactForm = props => {
+  const { handleSubmit } = props
+  return (
+    <Form onSubmit={ handleSubmit }>
+      <Form.Field>
+        <TextField
+          name="firstName"
+          label="First Name"
+          placeholder="Enter First Name"
+        />
+      </Form.Field>
+      <Form.Field>
+        <TextField
+          name="lastName"
+          label="Last Name"
+          placeholder="Enter Last Name"
+        />
+      </Form.Field>
+      <Button>Save</Button>
+    </Form>
+  )
+}
+
+const Validator = values => ({
+  firstName: (!values.firstName || !values.firstName) && 'Required',
+  lastName: (!values.lastName || !values.lastName) && 'Required',
+});
+
+export default reduxForm({
+  // a unique name for the form
+  form: 'contact',
+  validate: validator,
+})(ContactForm)
+```
 
 ## Implemented Components
 Fields are a combination of label, input, error.
@@ -31,7 +163,7 @@ errorColor: any semantic color
 
 ## Example TextField
 ```
-import { TextField } from 'redux-form-semantic'
+import { TextField } from '@panderalabs/redux-form-semantic'
 
 <Form onSubmit={handleSubmit}>
   <TextField
@@ -44,7 +176,7 @@ import { TextField } from 'redux-form-semantic'
 
 ## Example TextAreaField
 ```
-import { TextAreaField } from 'redux-form-semantic'
+import { TextAreaField } from '@panderalabs/redux-form-semantic'
 
 <Form onSubmit={handleSubmit}>
   <TextAreaField
@@ -57,7 +189,7 @@ import { TextAreaField } from 'redux-form-semantic'
 
 ## Example SelectField
 ```
-import { SelectField } from 'redux-form-semantic'
+import { SelectField } from '@panderalabs/redux-form-semantic'
 
 <Form onSubmit={handleSubmit}>
   <SelectField

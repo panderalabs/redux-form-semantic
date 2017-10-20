@@ -1,9 +1,9 @@
 {
-  "name": "@panderasystems/redux-form-semantic",
+  "name": "@panderalabs/redux-form-semantic",
   "version": "0.1.1",
   "description": "Multiple components integrating redux-form and semantic-ui-react together for standardized error handling.",
   "main": "dist/index.js",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/panderasystems/redux-form-semantic.git"
