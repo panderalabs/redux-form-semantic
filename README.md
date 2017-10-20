@@ -20,7 +20,7 @@ npm install --save redux-form
 npm install --save semantic-ui-react
 npm install --save @panderalabs/redux-form-semantic
 ```
-
+### Hook up redux-form middleware
 Hook up your form to redux-form:
 ```js
 import { createStore, combineReducers } from 'redux'
@@ -36,7 +36,7 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer)
 ```
 
-### Hook up to redux-form
+### Wrap a Semantic-UI form with Redux-Form
 Create a new Semantic UI form & wrap it in redux-form:
 ```js
 import React from 'react'
