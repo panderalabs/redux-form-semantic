@@ -71,20 +71,16 @@ const ContactForm = props => {
   const { handleSubmit } = props
   return (
     <Form onSubmit={ handleSubmit }>
-      <Form.Field>
-        <TextField
-          name="firstName"
-          label="First Name"
-          placeholder="Enter First Name"
-        />
-      </Form.Field>
-      <Form.Field>
-        <TextField
-          name="lastName"
-          label="Last Name"
-          placeholder="Enter Last Name"
-        />
-      </Form.Field>
+      <TextField
+        name="firstName"
+        label="First Name"
+        placeholder="Enter First Name"
+      />
+      <TextField
+        name="lastName"
+        label="Last Name"
+        placeholder="Enter Last Name"
+      />
       <Button>Save</Button>
     </Form>
   )
@@ -107,20 +103,16 @@ const ContactForm = props => {
   const { handleSubmit } = props
   return (
     <Form onSubmit={ handleSubmit }>
-      <Form.Field>
-        <TextField
-          name="firstName"
-          label="First Name"
-          placeholder="Enter First Name"
-        />
-      </Form.Field>
-      <Form.Field>
-        <TextField
-          name="lastName"
-          label="Last Name"
-          placeholder="Enter Last Name"
-        />
-      </Form.Field>
+      <TextField
+        name="firstName"
+        label="First Name"
+        placeholder="Enter First Name"
+      />
+      <TextField
+        name="lastName"
+        label="Last Name"
+        placeholder="Enter Last Name"
+      />
       <Button>Save</Button>
     </Form>
   )
